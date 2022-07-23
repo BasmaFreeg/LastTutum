@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tutumapp/LogAs.dart';
 import 'package:tutumapp/PatList.dart';
+import 'package:tutumapp/SignAs.dart';
 
 void main() {
   runApp(MaterialApp(home: LoginScreenMonitor()));
@@ -227,7 +228,8 @@ class LoginScreenMonitor extends StatelessWidget {
                   ),
                   TextButton(
                       onPressed: () {
-                        print("connect to sign up page ...");
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => SignAS()));
                       },
                       child: Text(
                         'Create new account',
