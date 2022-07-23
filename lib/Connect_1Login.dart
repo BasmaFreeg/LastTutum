@@ -25,8 +25,8 @@ class Connect_1Login extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => LogAS()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => LoginScreen()));
           },
         ),
       ),

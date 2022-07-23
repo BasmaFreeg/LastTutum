@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tutumapp/Connect_1.dart';
+import 'package:tutumapp/LogAs.dart';
+import 'package:tutumapp/SignAs.dart';
 
 void main() {
   runApp(MaterialApp(home: LoginScreen()));
@@ -19,12 +22,12 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: primaryColor.withOpacity(0.0),
-        leading: const IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: printMess,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => LogAS()));
+          },
         ),
       ),
       body: Padding(
@@ -200,8 +203,8 @@ class LoginScreen extends StatelessWidget {
                   child: MaterialButton(
                     color: primaryColor,
                     onPressed: () {
-                      print(emailController.text);
-                      print(passwordController.text);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Connect_1()));
                     },
                     child: const Text(
                       'Login',
@@ -225,7 +228,8 @@ class LoginScreen extends StatelessWidget {
                   ),
                   TextButton(
                       onPressed: () {
-                        print("connect to sign up page ...");
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => SignAS()));
                       },
                       child: Text(
                         'Create new account',

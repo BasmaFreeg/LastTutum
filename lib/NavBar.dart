@@ -13,11 +13,12 @@ class NavBar extends StatelessWidget {
             child: UserAccountsDrawerHeader(
               accountName: Text(
                 'Mohamed Shebl',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
+                style: TextStyle(fontSize: 20, color: Colors.black),
               ),
-              accountEmail: Text('Mohamed@gmail.com'),
+              accountEmail: Text(
+                'Mohamed@gmail.com',
+                style: TextStyle(color: Colors.black),
+              ),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.white,
                 child: ClipOval(

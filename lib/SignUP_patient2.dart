@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tutumapp/LogAs.dart';
+import 'package:tutumapp/SignUP_patient.dart';
 import 'package:tutumapp/diseases.dart';
+import 'package:tutumapp/mainH.dart';
 
 class SignUP_patient2 extends StatefulWidget {
   const SignUP_patient2({Key? key}) : super(key: key);
@@ -21,12 +24,12 @@ class _SignUP_patient2State extends State<SignUP_patient2> {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: primaryColor.withOpacity(0.0),
-        leading: const IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: printMess,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SignUP_patient()));
+          },
         ),
       ),
       body: Padding(
@@ -268,7 +271,7 @@ class _SignUP_patient2State extends State<SignUP_patient2> {
                     color: primaryColor,
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => diseases()));
+                          MaterialPageRoute(builder: (context) => mainH()));
                     },
                     child: const Text(
                       'Continue',
@@ -292,7 +295,8 @@ class _SignUP_patient2State extends State<SignUP_patient2> {
                   ),
                   TextButton(
                       onPressed: () {
-                        print("connect to sign up page ...");
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => LogAS()));
                       },
                       child: Text(
                         'Sign in',

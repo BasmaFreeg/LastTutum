@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tutumapp/LogAs.dart';
+import 'package:tutumapp/PatList.dart';
 
 void main() {
   runApp(MaterialApp(home: LoginScreenMonitor()));
@@ -19,12 +21,12 @@ class LoginScreenMonitor extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: primaryColor.withOpacity(0.0),
-        leading: const IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: printMess,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => LogAS()));
+          },
         ),
       ),
       body: Padding(
@@ -200,8 +202,8 @@ class LoginScreenMonitor extends StatelessWidget {
                   child: MaterialButton(
                     color: primaryColor,
                     onPressed: () {
-                      print(emailController.text);
-                      print(passwordController.text);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => PatList()));
                     },
                     child: const Text(
                       'Login',
