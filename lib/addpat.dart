@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tutumapp/PatList.dart';
 import 'package:tutumapp/PatLmain.dart';
+import 'package:tutumapp/med2.dart';
 
 void main() {
   runApp(MaterialApp(home: profile()));
@@ -93,13 +94,16 @@ class _profileState extends State<profile> {
                             )),
                       ],
                     )),
+                    SizedBox(
+                      height: 30,
+                    ),
                     TextField(
                       cursorColor: primaryColor,
                       controller: addController,
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                        hintText: 'pat code',
+                        hintText: 'Patient Code',
                         hintStyle: TextStyle(fontSize: 16),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -115,7 +119,7 @@ class _profileState extends State<profile> {
                       ),
                     ),
                     SizedBox(
-                      height: 300,
+                      height: 250,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 95, left: 95),
@@ -128,12 +132,26 @@ class _profileState extends State<profile> {
                         width: double.infinity,
                         child: MaterialButton(
                           color: primaryColor,
-                          onPressed: () {
-                            // Navigator.push(
-                            //     context,
-                            // MaterialPageRoute(
-                            //     builder: (context) => SignUP_Doctor2()));
-                          },
+                          onPressed: () => showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) => AlertDialog(
+                              content: const Text(
+                                'Patient Added Successfully',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () => Navigator.pop(context, 'OK'),
+                                  child: const Text(
+                                    'OK',
+                                    style: TextStyle(color: Colors.pink),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                           child: const Text(
                             'Add',
                             style: TextStyle(
