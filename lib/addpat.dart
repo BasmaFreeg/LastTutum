@@ -4,17 +4,15 @@ import 'package:tutumapp/PatLmain.dart';
 import 'package:tutumapp/med2.dart';
 
 void main() {
-  runApp(MaterialApp(home: profile()));
+  runApp(MaterialApp(home: addpat()));
 }
 
-class profile extends StatefulWidget {
-  const profile({Key? key}) : super(key: key);
-
+class addpat extends StatefulWidget {
   @override
-  State<profile> createState() => _profileState();
+  State<addpat> createState() => _addpatState();
 }
 
-class _profileState extends State<profile> {
+class _addpatState extends State<addpat> {
   var primaryColor = Color.fromARGB(255, 228, 42, 76);
   var primaryColor2 = Color(0xFFEDEDED);
   var primaryColor3 = Color(0xFFFFDBDB);
@@ -85,7 +83,7 @@ class _profileState extends State<profile> {
                       ),
                       children: const <TextSpan>[
                         TextSpan(
-                            text: 'Ahmed',
+                            text: 'Amged',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w400,

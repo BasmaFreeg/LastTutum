@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:tutumapp/addpat.dart';
 
 class UserModel {
   // final int id;
@@ -25,7 +26,7 @@ class PatList extends StatelessWidget {
     // Specialization: 'Cardiovascular disease specialist'),
     UserModel(
         // id: 102,
-        Doc_name: 'Nader mohamed'),
+        Doc_name: 'Emad mohamed'),
     // Specialization: 'Cardiovascular disease specialist'),
     UserModel(
         // id: 100,
@@ -33,7 +34,7 @@ class PatList extends StatelessWidget {
     // Specialization: 'Cardiovascular disease specialist'),
     UserModel(
         // id: 101,
-        Doc_name: 'Mohamed Ahmed'),
+        Doc_name: 'Wael Ahmed'),
     // Specialization: 'Cardiovascular disease specialist'),
     // UserModel(
     //     id: 102,
@@ -92,7 +93,7 @@ class PatList extends StatelessWidget {
                       color: Colors.black87,
                       fontSize: 18,
                       fontWeight: FontWeight.w400)),
-              Text("Ahmed",
+              Text("DR. Amged",
                   style: TextStyle(
                     color: Colors.black87,
                     fontSize: 18,
@@ -105,7 +106,10 @@ class PatList extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 13),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => addpat()));
+              },
               icon: Image.asset(
                 'images/plus.png',
               ),
@@ -165,7 +169,7 @@ class PatList extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            'Mr. ',
+                            '',
                             style: TextStyle(
                               fontSize: 19,
                               color: Colors.black87,
