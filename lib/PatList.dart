@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:tutumapp/addpat.dart';
+import 'package:tutumapp/mainH.dart';
 
 class UserModel {
   // final int id;
@@ -14,11 +15,15 @@ class UserModel {
   });
 }
 
+void main() {
+  runApp(MaterialApp(home: PatList()));
+}
+
 class PatList extends StatelessWidget {
   List<UserModel> user = [
     UserModel(
         // id: 100,
-        Doc_name: 'Ziad Mohamed'),
+        Doc_name: 'Ahmed Mohamoud'),
     // Specialization: 'Cardiovascular disease specialist'),
     UserModel(
         // id: 101,
@@ -117,17 +122,23 @@ class PatList extends StatelessWidget {
           )
         ],
       ),
-      body: ListView.separated(
-        itemBuilder: (context, index) => buildUserItem(user[index]),
-        separatorBuilder: (context, index) => Padding(
-          padding: EdgeInsetsDirectional.only(start: 20),
-          child: Container(
-            width: double.infinity,
-            height: 1.0,
-            color: Colors.grey[400],
-          ),
+      body: Container(
+        child: Column(
+          children: [
+            ListView.separated(
+              itemBuilder: (context, index) => buildUserItem(user[index]),
+              separatorBuilder: (context, index) => Padding(
+                padding: EdgeInsetsDirectional.only(start: 20),
+                child: Container(
+                  width: double.infinity,
+                  height: 1.0,
+                  color: Colors.grey[400],
+                ),
+              ),
+              itemCount: user.length,
+            ),
+          ],
         ),
-        itemCount: user.length,
       ),
     );
   }

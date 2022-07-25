@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:tutumapp/NavBar.dart";
+import 'package:tutumapp/med2.dart';
 
 void main() {
   runApp(MaterialApp(home: PatHome()));
@@ -70,7 +71,10 @@ class _PatHomeState extends State<PatHome> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 13),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => med2()));
+                },
                 icon: Image.asset(
                   'images/pluss.png',
                 ),
